@@ -1,40 +1,13 @@
 {
-    "name": "moodle/moodle",
-    "license": "GPL-3.0-or-later",
-    "description": "Moodle - the world's open source learning platform",
-    "type": "project",
-    "homepage": "https://moodle.org",
-    "require": {
-        "php": ">=5.3.0",
-        "silex/silex": "~1.0@dev",
-        "chh/cache-service-provider": "~1.0",
-        "ext-libevent": "*",
-        "ext-curl": "*",
-        "ext-sundown": "*"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "6.4.*",
-        "phpunit/dbUnit": "3.0.*",
-        "moodlehq/behat-extension": "3.35.1",
-        "mikey179/vfsStream": "^1.6"
-    }
-        "extra": {
-        "heroku": {
-            "document-root": "web",
-            "index-document": "index.php",
-            "php-config": [
-                "short_open_tag=on",
-                "date.timezone=Europe/Vienna",
-                "newrelic.appname=php-test"
-            ],
-            "engines": {
-                "php": "5.5.*",
-                "nginx": "1.4.*"
-            },
-            "compile": [
-                "echo $FOO"
-            ],
-            "newrelic": true
+    "repositories" : [
+        {
+            "type": "vcs",
+            "url": "https://github.com/moodlehq/moodle-behat-extension"
         }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "phpunit/dbUnit": "1.2.*",
+        "moodlehq/behat-extension": "1.25.6"
     }
 }
