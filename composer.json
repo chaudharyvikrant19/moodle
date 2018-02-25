@@ -6,21 +6,35 @@
     "homepage": "https://moodle.org",
     "require": {
         "php": ">=5.5.9",
-        "ext-json": "*",
-        "ext-gd": "*",
+        "silex/silex": "~1.0@dev",
+        "chh/cache-service-provider": "~1.0",
+        "ext-libevent": "*",
         "ext-curl": "*",
-        "ext-openssl": "*",
-        "slim/slim": "^3.8",
-        "tuupola/slim-jwt-auth": "^2.0",
-        "league/url": "^3.3",
-        "psr/log": "^1.0",
-        "league/oauth2-server": "^5.1",
-        "justinrainbow/json-schema": "^5.2"
-      },
+        "ext-sundown": "*"
+    },
     "require-dev": {
         "phpunit/phpunit": "6.4.*",
         "phpunit/dbUnit": "3.0.*",
         "moodlehq/behat-extension": "3.35.1",
         "mikey179/vfsStream": "^1.6"
+    }
+        "extra": {
+        "heroku": {
+            "document-root": "web",
+            "index-document": "index.php",
+            "php-config": [
+                "short_open_tag=on",
+                "date.timezone=Europe/Vienna",
+                "newrelic.appname=php-test"
+            ],
+            "engines": {
+                "php": "5.5.*",
+                "nginx": "1.4.*"
+            },
+            "compile": [
+                "echo $FOO"
+            ],
+            "newrelic": true
+        }
     }
 }
